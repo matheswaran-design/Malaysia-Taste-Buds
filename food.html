@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Malaysian Taste Buds - Authentic Malaysian Recipes. Discover detailed recipes for Nasi Lemak, Asam Laksa, Roti Canai, and Kuih Lapis with ingredients and cooking instructions.">
+    <meta name="keywords" content="Malaysian recipes, Nasi Lemak recipe, Asam Laksa recipe, Roti Canai recipe, Kuih Lapis recipe, how to cook Malaysian food, authentic Malaysian cuisine, Malaysian cooking, food recipes">
+    <meta name="author" content="Malaysian Taste Buds">
+    <meta property="og:title" content="Malaysian Food Recipes - Authentic Dishes">
+    <meta property="og:description" content="Explore authentic Malaysian recipes with detailed ingredients and step-by-step cooking instructions.">
+    <title>Food Recipes - Malaysian Taste Buds</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Malaysian Taste Buds</h1>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="food.html">Food</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="food-section">
+        <div class="container">
+            <h1>Malaysian Food Recipes - Authentic Dishes</h1>
+            
+            <div class="food-gallery">
+                <!-- Nasi Lemak -->
+                <div class="food-item">
+                    <div class="food-image-container">
+                        <img src="assets/images/nasi-lemak.jpg" alt="Nasi Lemak - Malaysia's national dish with fragrant coconut rice, spicy sambal, crispy anchovies, roasted peanuts, boiled egg, and fresh cucumber" class="food-image" id="nasi-lemak-img" onclick="toggleRecipe('nasi-lemak')">
+                        <p class="image-hint">Click to view recipe</p>
+                    </div>
+                    <div id="nasi-lemak" class="recipe-content" style="display: none;">
+                        <h2>Nasi Lemak</h2>
+                        <p class="description">Nasi Lemak is Malaysia's national dish, known for its fragrant coconut rice served with spicy sambal, crispy anchovies, roasted peanuts, boiled egg, and fresh cucumber. Rich, aromatic, and comforting, it represents the heart of Malaysian home cooking and street food culture.</p>
+                        
+                        <section class="ingredients-section">
+                            <h3>Ingredients <span class="serving-info">(Serves 3–4)</span></h3>
+                            <article class="ingredient-category">
+                                <h4>Coconut Rice</h4>
+                                <ul>
+                                    <li>2 cups Jasmine rice</li>
+                                    <li>1 ½ cups Coconut milk</li>
+                                    <li>½ cup Water</li>
+                                    <li>2 Pandan leaves (knotted)</li>
+                                    <li>1 tsp Salt</li>
+                                </ul>
+                            </article>
+                            <article class="ingredient-category">
+                                <h4>Sambal</h4>
+                                <ul>
+                                    <li>15–20 Dried chilies (soaked and blended)</li>
+                                    <li>1 large Onion</li>
+                                    <li>3 cloves Garlic</li>
+                                    <li>1 tbsp Tamarind paste</li>
+                                    <li>2 tbsp Sugar</li>
+                                    <li>Salt to taste</li>
+                                    <li>Oil for frying</li>
+                                </ul>
+                            </article>
+                            <article class="ingredient-category">
+                                <h4>Side Dishes</h4>
+                                <ul>
+                                    <li>1 cup Dried anchovies (ikan bilis), fried</li>
+                                    <li>½ cup Peanuts, roasted or fried</li>
+                                    <li>3–4 Eggs, hard-boiled</li>
+                                    <li>1 Cucumber, sliced</li>
+                                </ul>
+                            </article>
+                        </section>
+
+                        <section class="instructions-section">
+                            <h3>Cooking Instructions</h3>
+                            <ol>
+                                <li>
+                                    <strong>Prepare Coconut Rice:</strong>
+                                    <p>Wash rice until water runs clear. Cook rice with coconut milk, water, pandan leaves, and salt until fluffy and fragrant. Remove pandan leaves before serving.</p>
+                                </li>
+                                <li>
+                                    <strong>Make Sambal:</strong>
+                                    <p>Blend soaked chilies, onion, and garlic into a smooth paste. Heat oil and sauté paste until fragrant and oil separates. Add tamarind paste, sugar, and salt. Simmer until thick.</p>
+                                </li>
+                                <li>
+                                    <strong>Prepare Sides:</strong>
+                                    <p>Fry anchovies until crispy. Roast or fry peanuts. Boil eggs and slice. Cut cucumber into thin slices.</p>
+                                </li>
+                                <li>
+                                    <strong>Serve:</strong>
+                                    <p>Plate coconut rice with sambal, anchovies, peanuts, egg, and cucumber. Serve warm.</p>
+                                </li>
+                            </ol>
+                        </section>
+                        <button class="close-btn" onclick="toggleRecipe('nasi-lemak')">Close Recipe</button>
+                    </div>
+                </div>
+
+                <!-- Asam Laksa -->
+                <div class="food-item">
+                    <div class="food-image-container">
+                        <img src="assets/images/asam-laksa.jpg" alt="Asam Laksa - Bold and tangy Malaysian noodle soup from Penang with tamarind-based fish broth, fresh herbs, and balanced flavors" class="food-image" id="asam-laksa-img" onclick="toggleRecipe('asam-laksa')">
+                        <p class="image-hint">Click to view recipe</p>
+                    </div>
+                    <div id="asam-laksa" class="recipe-content" style="display: none;">
+                        <h2>Asam Laksa</h2>
+                        <p class="description">Asam Laksa is a bold and tangy Malaysian noodle soup originating from Penang. Made with a tamarind-based fish broth and topped with fresh herbs, it delivers a perfect balance of sour, spicy, sweet, and savory flavours.</p>
+                        
+                        <section class="ingredients-section">
+                            <h3>Ingredients <span class="serving-info">(Serves 4)</span></h3>
+                            <article class="ingredient-category">
+                                <h4>Broth</h4>
+                                <ul>
+                                    <li>2 medium Mackerel fish (or sardines)</li>
+                                    <li>1.5 liters Water</li>
+                                    <li>3–4 tbsp Tamarind paste</li>
+                                    <li>2 stalks Lemongrass (bruised)</li>
+                                    <li>1 Torch ginger flower (sliced)</li>
+                                    <li>Salt and sugar to taste</li>
+                                </ul>
+                            </article>
+                            <article class="ingredient-category">
+                                <h4>Spice Paste</h4>
+                                <ul>
+                                    <li>10–12 Dried chilies (soaked)</li>
+                                    <li>1 Onion</li>
+                                    <li>3 cloves Garlic</li>
+                                    <li>1 tbsp Shrimp paste (belacan)</li>
+                                </ul>
+                            </article>
+                            <article class="ingredient-category">
+                                <h4>Noodles & Toppings</h4>
+                                <ul>
+                                    <li>Thick rice noodles (laksa noodles)</li>
+                                    <li>Cucumber (julienned)</li>
+                                    <li>Red onion (sliced thin)</li>
+                                    <li>Pineapple (thin slices)</li>
+                                    <li>Mint leaves</li>
+                                    <li>Lettuce</li>
+                                    <li>Shrimp paste (optional, for serving)</li>
+                                </ul>
+                            </article>
+                        </section>
+
+                        <section class="instructions-section">
+                            <h3>Cooking Instructions</h3>
+                            <ol>
+                                <li>
+                                    <strong>Prepare Fish Broth:</strong>
+                                    <p>Boil fish in water until cooked. Remove fish, flake the flesh, discard bones, and return flesh to the pot.</p>
+                                </li>
+                                <li>
+                                    <strong>Prepare Spice Paste:</strong>
+                                    <p>Blend soaked chilies, onion, garlic, and shrimp paste until smooth.</p>
+                                </li>
+                                <li>
+                                    <strong>Cook Broth:</strong>
+                                    <p>Add spice paste, lemongrass, torch ginger flower, and tamarind paste into the fish broth. Simmer 20–30 minutes. Season with salt and sugar.</p>
+                                </li>
+                                <li>
+                                    <strong>Prepare Noodles:</strong>
+                                    <p>Cook rice noodles according to package instructions. Drain and set aside.</p>
+                                </li>
+                                <li>
+                                    <strong>Assemble:</strong>
+                                    <p>Place noodles in a bowl, ladle hot broth over, and top with cucumber, onion, pineapple, mint, and lettuce. Add shrimp paste if desired.</p>
+                                </li>
+                            </ol>
+                        </section>
+                        <button class="close-btn" onclick="toggleRecipe('asam-laksa')">Close Recipe</button>
+                    </div>
+                </div>
+
+                <!-- Roti Canai -->
+                <div class="food-item">
+                    <div class="food-image-container">
+                        <img src="assets/images/roti-canai.jpg" alt="Roti Canai - Flaky, golden Malaysian flatbread with crisp layers and soft, chewy interior, perfect with curry or dhal" class="food-image" id="roti-canai-img" onclick="toggleRecipe('roti-canai')">
+                        <p class="image-hint">Click to view recipe</p>
+                    </div>
+                    <div id="roti-canai" class="recipe-content" style="display: none;">
+                        <h2>Roti Canai</h2>
+                        <p class="description">Roti Canai is a flaky, golden Malaysian flatbread, known for its crisp layers and soft, chewy interior. Perfect with dhal, curry, or even sweet condensed milk.</p>
+                        
+                        <section class="ingredients-section">
+                            <h3>Ingredients</h3>
+                            <article class="ingredient-category">
+                                <h4>Dry Ingredients</h4>
+                                <ul>
+                                    <li>3 ½ cups (500g) all-purpose flour or bread flour</li>
+                                    <li>1 tsp salt</li>
+                                    <li>1 tsp sugar</li>
+                                </ul>
+                            </article>
+                            <article class="ingredient-category">
+                                <h4>Wet Ingredients</h4>
+                                <ul>
+                                    <li>1 cup (240–300ml) water (room temp or slightly warm)</li>
+                                </ul>
+                            </article>
+                            <article class="ingredient-category">
+                                <h4>Fat/Binder</h4>
+                                <ul>
+                                    <li>2 tbsp sweetened condensed milk (optional)</li>
+                                    <li>1 egg (optional)</li>
+                                    <li>3–4 tbsp ghee or butter</li>
+                                    <li>Vegetable oil (for soaking)</li>
+                                </ul>
+                            </article>
+                        </section>
+
+                        <section class="instructions-section">
+                            <h3>Cooking Instructions</h3>
+                            <ol>
+                                <li>
+                                    <strong>Make the Dough:</strong>
+                                    <p>Combine flour, salt, sugar, milk/egg (if using), and water. Knead for 10–15 mins until smooth and elastic.</p>
+                                </li>
+                                <li>
+                                    <strong>Divide & Rest:</strong>
+                                    <p>Divide into 8–10 balls. Coat each in oil/ghee and refrigerate for at least 6 hours or overnight.</p>
+                                </li>
+                                <li>
+                                    <strong>Stretch:</strong>
+                                    <p>Flatten a dough ball on an oiled surface and stretch it until paper-thin.</p>
+                                </li>
+                                <li>
+                                    <strong>Fold & Coil:</strong>
+                                    <p>Spread butter/ghee, fold into a long strip, and roll into a coil.</p>
+                                </li>
+                                <li>
+                                    <strong>Final Rest:</strong>
+                                    <p>Let the coil rest 15–30 mins.</p>
+                                </li>
+                                <li>
+                                    <strong>Cook:</strong>
+                                    <p>Flatten slightly and pan-fry on medium heat with ghee until golden brown and crispy (2–3 mins per side).</p>
+                                </li>
+                                <li>
+                                    <strong>Serve:</strong>
+                                    <p>Tap or "clap" the sides to fluff up the layers and enjoy warm.</p>
+                                </li>
+                            </ol>
+                        </section>
+                        <button class="close-btn" onclick="toggleRecipe('roti-canai')">Close Recipe</button>
+                    </div>
+                </div>
+
+                <!-- Kuih Lapis -->
+                <div class="food-item">
+                    <div class="food-image-container">
+                        <img src="assets/images/kuih-lapis.jpg" alt="Kuih Lapis - Traditional layered Malaysian dessert with vibrant colors made with tapioca, rice flour, and coconut milk" class="food-image" id="kuih-lapis-img" onclick="toggleRecipe('kuih-lapis')">
+                        <p class="image-hint">Click to view recipe</p>
+                    </div>
+                    <div id="kuih-lapis" class="recipe-content" style="display: none;">
+                        <h2>Kuih Lapis</h2>
+                        <p class="description">Kuih Lapis is a traditional layered Malaysian dessert, made with tapioca and rice flour, coconut milk, and pandan for fragrance. Its vibrant layers make it as beautiful as it is delicious.</p>
+                        
+                        <section class="ingredients-section">
+                            <h3>Ingredients <span class="serving-info">(Approx. 7-inch pan)</span></h3>
+                            <article class="ingredient-category">
+                                <h4>Dry Ingredients</h4>
+                                <ul>
+                                    <li>300–360g Tapioca flour</li>
+                                    <li>80–150g Rice flour</li>
+                                </ul>
+                            </article>
+                            <article class="ingredient-category">
+                                <h4>Wet Ingredients</h4>
+                                <ul>
+                                    <li>400–600ml Coconut milk</li>
+                                    <li>250–500ml Water</li>
+                                </ul>
+                            </article>
+                            <article class="ingredient-category">
+                                <h4>Sweetener & Flavor</h4>
+                                <ul>
+                                    <li>150–300g Sugar</li>
+                                    <li>3/4 tsp Salt</li>
+                                    <li>3–4 Pandan leaves</li>
+                                </ul>
+                            </article>
+                            <article class="ingredient-category">
+                                <h4>Coloring</h4>
+                                <ul>
+                                    <li>Red/Green food coloring or pandan extract</li>
+                                </ul>
+                            </article>
+                        </section>
+
+                        <section class="instructions-section">
+                            <h3>Cooking Instructions</h3>
+                            <ol>
+                                <li>
+                                    <strong>Prepare the Batter:</strong>
+                                    <p>Boil water with sugar, salt, and pandan leaves, then cool. Mix tapioca flour, rice flour, and coconut milk; combine with cooled syrup. Strain to remove lumps.</p>
+                                </li>
+                                <li>
+                                    <strong>Divide & Color:</strong>
+                                    <p>Split batter into 2–3 portions and add coloring.</p>
+                                </li>
+                                <li>
+                                    <strong>Prepare Steamer:</strong>
+                                    <p>Grease a 7-inch pan and preheat in steamer 5 mins.</p>
+                                </li>
+                                <li>
+                                    <strong>Steam Layers:</strong>
+                                    <p>Pour first layer (~100–125ml) and steam 5–7 mins until set.</p>
+                                </li>
+                                <li>
+                                    <strong>Repeat:</strong>
+                                    <p>Stir remaining batter, pour next layer, steam. Repeat for all layers.</p>
+                                </li>
+                                <li>
+                                    <strong>Final Steam & Cool:</strong>
+                                    <p>Steam final layer 10–15 mins. Cool completely (preferably 4–6 hours) before slicing.</p>
+                                </li>
+                            </ol>
+                        </section>
+                        <button class="close-btn" onclick="toggleRecipe('kuih-lapis')">Close Recipe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Malaysian Taste Buds. All rights reserved. | Authentic Malaysian Recipes & Culinary Heritage</p>
+    </footer>
+
+    <script>
+        function toggleRecipe(recipeId) {
+            const recipe = document.getElementById(recipeId);
+            recipe.style.display = recipe.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Track recipe views in Google Analytics
+        document.querySelectorAll('.food-image').forEach(img => {
+            img.addEventListener('click', function() {
+                gtag('event', 'recipe_view', {
+                    'recipe_name': this.id.replace('-img', '')
+                });
+            });
+        });
+    </script>
+</body>
+</html>
