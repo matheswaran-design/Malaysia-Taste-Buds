@@ -1,69 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Character Encoding and Viewport -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Malaysian Taste Buds - Explore the rich culinary heritage of Malaysia with authentic recipes, stories, and cultural insights into traditional Malaysian dishes.">
-    <meta name="keywords" content="Malaysian food, Malaysian cuisine, Nasi Lemak, Asam Laksa, Roti Canai, Kuih Lapis, Malaysian recipes, authentic Malaysian dishes, Malaysian culture, food diary">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Malaysian Taste Buds - Explore authentic Malaysian cuisine with traditional recipes, cooking instructions, ingredients, and cultural insights into Nasi Lemak, Asam Laksa, Roti Canai, and more Malaysian dishes.">
+    <meta name="keywords" content="Malaysian food, Malaysian cuisine, authentic recipes, Nasi Lemak recipe, Asam Laksa, Roti Canai, Kuih Lapis, Malaysian cooking, traditional dishes, Malaysian ingredients, how to cook Malaysian food, Malaysian kitchen">
     <meta name="author" content="Malaysian Taste Buds">
-    <meta property="og:title" content="Malaysian Taste Buds - A Journey Through Malaysian Cuisine">
-    <meta property="og:description" content="Discover the flavors, stories, and traditions behind Malaysia's most beloved dishes.">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Open Graph Meta Tags (Social Media Sharing) -->
+    <meta property="og:title" content="Malaysian Taste Buds - Discover Authentic Malaysian Cuisine & Recipes">
+    <meta property="og:description" content="Learn to cook authentic Malaysian dishes with step-by-step recipes, ingredients, and cultural stories. Explore Nasi Lemak, Asam Laksa, Roti Canai, and more.">
     <meta property="og:image" content="assets/images/malaysian-flag.jpg">
-    <title>Malaysian Taste Buds - Welcome</title>
+    <meta property="og:url" content="https://yourdomain.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Malaysian Taste Buds - Authentic Recipes & Culinary Guide">
+    <meta name="twitter:description" content="Discover authentic Malaysian recipes, cooking instructions, and cultural heritage.">
+    <meta name="twitter:image" content="assets/images/malaysian-flag.jpg">
+    
+    <!-- Canonical URL (Prevents Duplicate Content) -->
+    <link rel="canonical" href="https://yourdomain.com/index.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    
+    <!-- Page Title -->
+    <title>Malaysian Taste Buds - Authentic Malaysian Recipes & Culinary Heritage | Home</title>
+    
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css">
-    <!-- Google Analytics -->
+    
+    <!-- Google Analytics - Replace G-XXXXXXXXXX with your actual Google Analytics ID -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX');
+        gtag('config', 'G-XXXXXXXXXX', {
+            'page_path': window.location.pathname,
+            'page_title': document.title
+        });
+    </script>
+    
+    <!-- Schema.org Structured Data (Rich Snippets for Search Engines) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Malaysian Taste Buds",
+        "description": "Explore authentic Malaysian cuisine with traditional recipes and cooking instructions",
+        "url": "https://yourdomain.com",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://yourdomain.com/search?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Malaysian Taste Buds",
+        "description": "A culinary website dedicated to Malaysian food, recipes, and cultural heritage",
+        "url": "https://yourdomain.com",
+        "logo": "assets/images/logo.png",
+        "sameAs": [
+            "https://www.facebook.com/malaysiatastebuds",
+            "https://www.instagram.com/malaysiatastebuds",
+            "https://www.twitter.com/malaysiatastebuds"
+        ],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Support",
+            "email": "info@malaysiatastebuds.com"
+        }
+    }
     </script>
 </head>
+
 <body>
-    <header class="header">
+    <!-- Header / Navigation Section -->
+    <header class="header" role="banner">
         <div class="container">
             <div class="logo">
                 <h1>Malaysian Taste Buds</h1>
+                <p class="tagline">Authentic Malaysian Recipes & Culinary Heritage</p>
             </div>
-            <nav class="navbar">
+            <nav class="navbar" role="navigation" aria-label="Main Navigation">
                 <ul>
-                    <li><a href="home.html">Home</a></li>
+                    <li><a href="index.html" aria-current="page">Home</a></li>
                     <li><a href="food.html">Food</a></li>
                     <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main class="intro-section">
+    <!-- Main Content Section -->
+    <main class="intro-section" role="main">
         <div class="intro-container">
             <div class="intro-text">
                 <h1>Welcome to Malaysian Taste Buds</h1>
-                <p>Discover the authentic flavors, rich traditions, and untold stories of Malaysian cuisine</p>
+                <p>Discover the authentic flavors, rich traditions, and untold stories of <strong>Malaysian cuisine</strong></p>
+                <p>Learn how to cook traditional Malaysian dishes with step-by-step recipes, detailed ingredients, and cultural insights.</p>
             </div>
+            
+            <!-- Hero Images with SEO-Optimized Alt Tags -->
             <div class="intro-images">
-                <figure>
-                    <img src="https://www.istockphoto.com/vector/flag-of-malaysia-malaysian-flag-vector-flag-background-stock-illustration-gm1565623976-527524620" alt="Malaysian flag representing the diverse culture and heritage of Malaysia">
+                <!-- Malaysian Flag Image -->
+                <figure class="image-figure">
+                    <img 
+                        src="assets/images/malaysian-flag.jpg" 
+                        alt="Malaysian flag representing the diverse culture and heritage of Malaysia" 
+                        width="300" 
+                        height="200"
+                        loading="lazy">
                     <figcaption>Malaysian Heritage</figcaption>
                 </figure>
-                <figure>
-                    <img src="assets/images/malaysian-culture.jpg" alt="Traditional Malaysian cultural symbols and imagery celebrating the nation's diversity">
+                
+                <!-- Malaysian Culture Image -->
+                <figure class="image-figure">
+                    <img 
+                        src="assets/images/malaysian-culture.jpg" 
+                        alt="Traditional Malaysian cultural symbols and imagery celebrating the nation's rich heritage and diversity" 
+                        width="300" 
+                        height="200"
+                        loading="lazy">
                     <figcaption>Malaysian Culture</figcaption>
                 </figure>
-                <figure>
-                    <img src="assets/images/malaysian-street-food.jpg" alt="Vibrant Malaysian street food market showcasing the diversity of local cuisine">
+                
+                <!-- Malaysian Street Food Image -->
+                <figure class="image-figure">
+                    <img 
+                        src="assets/images/malaysian-street-food.jpg" 
+                        alt="Vibrant Malaysian street food market showcasing diverse local cuisine including hawker stalls and traditional dishes" 
+                        width="300" 
+                        height="200"
+                        loading="lazy">
                     <figcaption>Street Food Culture</figcaption>
                 </figure>
             </div>
         </div>
+        
+        <!-- Call-to-Action Button -->
         <div class="intro-footer">
-            <a href="home.html" class="cta-button">Start Your Culinary Journey</a>
+            <a href="food.html" class="cta-button">Start Your Culinary Journey</a>
         </div>
     </main>
 
-    <footer class="footer">
-        <p>&copy; 2026 Malaysian Taste Buds. All rights reserved. | Celebrating Malaysian Culinary Heritage</p>
+    <!-- Footer Section -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="food.html">Food</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <ul class="social-links">
+                    <li><a href="https://www.facebook.com/malaysiatastebuds" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                    <li><a href="https://www.instagram.com/malaysiatastebuds" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    <li><a href="https://www.twitter.com/malaysiatastebuds" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: <a href="mailto:info@malaysiatastebuds.com">info@malaysiatastebuds.com</a></p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Malaysian Taste Buds. All rights reserved. | Celebrating Malaysian Culinary Heritage</p>
+            <p><a href="privacy.html">Privacy Policy</a> | <a href="sitemap.xml">Sitemap</a></p>
+        </div>
     </footer>
 </body>
+
 </html>
