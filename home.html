@@ -111,118 +111,136 @@
 
             <!-- Feedback Section -->
             <section class="feedback-section" aria-labelledby="feedback-heading">
-                <h2 id="feedback-heading">Share Your Culinary Experience</h2>
-                <p class="feedback-intro">We'd love to hear about your experience with Malaysian Taste Buds. Share your feedback, rate your favourite dishes, and help us improve our culinary journey.</p>
-                
-                <!-- Feedback Form -->
-                <div class="feedback-container">
-                    <form id="feedbackForm" class="feedback-form" method="POST" action="#" novalidate>
-                        <!-- Name Input -->
-                        <div class="form-group">
-                            <label for="visitorName">Your Name <span class="required">*</span></label>
-                            <input 
-                                type="text" 
-                                id="visitorName" 
-                                name="visitorName" 
-                                class="form-input" 
-                                placeholder="Enter your name"
-                                required 
-                                minlength="2"
-                                maxlength="50"
-                                aria-required="true"
-                                aria-describedby="nameError">
-                            <span class="error-message" id="nameError"></span>
-                        </div>
-
-                        <!-- Email Input -->
-                        <div class="form-group">
-                            <label for="visitorEmail">Your Email <span class="required">*</span></label>
-                            <input 
-                                type="email" 
-                                id="visitorEmail" 
-                                name="visitorEmail" 
-                                class="form-input" 
-                                placeholder="Enter your email address"
-                                required 
-                                aria-required="true"
-                                aria-describedby="emailError">
-                            <span class="error-message" id="emailError"></span>
-                        </div>
-
-                        <!-- Dish Selection -->
-                        <div class="form-group">
-                            <label for="dishName">Which Dish Did You Enjoy? <span class="required">*</span></label>
-                            <select 
-                                id="dishName" 
-                                name="dishName" 
-                                class="form-select" 
-                                required 
-                                aria-required="true"
-                                aria-describedby="dishError">
-                                <option value="">-- Select a dish --</option>
-                                <option value="Nasi Lemak">Nasi Lemak</option>
-                                <option value="Asam Laksa">Asam Laksa</option>
-                                <option value="Roti Canai">Roti Canai</option>
-                                <option value="Kuih Lapis">Kuih Lapis</option>
-                                <option value="Other">Other</option>
-                            </select>
-                            <span class="error-message" id="dishError"></span>
-                        </div>
-
-                        <!-- Star Rating -->
-                        <div class="form-group">
-                            <label for="ratingContainer">Rate Your Experience <span class="required">*</span></label>
-                            <div class="star-rating" id="ratingContainer" role="group" aria-labelledby="ratingLabel" aria-required="true">
-                                <span id="ratingLabel" class="sr-only">Rate your experience from 1 to 5 stars</span>
-                                <input type="radio" id="star5" name="rating" value="5" aria-label="5 stars">
-                                <label for="star5" class="star" data-value="5" title="5 stars - Excellent">★</label>
-                                
-                                <input type="radio" id="star4" name="rating" value="4" aria-label="4 stars">
-                                <label for="star4" class="star" data-value="4" title="4 stars - Very Good">★</label>
-                                
-                                <input type="radio" id="star3" name="rating" value="3" aria-label="3 stars">
-                                <label for="star3" class="star" data-value="3" title="3 stars - Good">★</label>
-                                
-                                <input type="radio" id="star2" name="rating" value="2" aria-label="2 stars">
-                                <label for="star2" class="star" data-value="2" title="2 stars - Fair">★</label>
-                                
-                                <input type="radio" id="star1" name="rating" value="1" aria-label="1 star">
-                                <label for="star1" class="star" data-value="1" title="1 star - Poor">★</label>
-                            </div>
-                            <span class="rating-display" id="ratingDisplay"></span>
-                            <span class="error-message" id="ratingError"></span>
-                        </div>
-
-                        <!-- Feedback Message -->
-                        <div class="form-group">
-                            <label for="feedbackMessage">Your Feedback <span class="required">*</span></label>
-                            <textarea 
-                                id="feedbackMessage" 
-                                name="feedbackMessage" 
-                                class="form-textarea" 
-                                placeholder="Share your thoughts about the recipes, website, or your culinary experience..."
-                                required 
-                                minlength="10"
-                                maxlength="500"
-                                rows="5"
-                                aria-required="true"
-                                aria-describedby="feedbackError feedbackCount"></textarea>
-                            <div class="textarea-info">
-                                <span id="feedbackCount" class="char-count">0/500</span>
-                                <span class="error-message" id="feedbackError"></span>
-                            </div>
-                        </div>
-
-                        <!-- Submit Button -->
-                        <button type="submit" class="feedback-submit-btn" aria-label="Submit your feedback">Submit Feedback</button>
-                    </form>
+                <!-- Section Header -->
+                <div class="feedback-section-header">
+                    <h2 id="feedback-heading">Share Your Culinary Experience</h2>
+                    <p class="feedback-intro">We'd love to hear about your experience with Malaysian Taste Buds. Share your feedback, rate your favourite dishes, and help us improve our culinary journey.</p>
                 </div>
 
-                <!-- Feedback Display Section -->
-                <div class="feedback-display-section">
-                    <h3 id="feedback-list-heading">Visitor Feedback & Reviews</h3>
-                    <div id="feedbackList" class="feedback-list" role="region" aria-labelledby="feedback-list-heading" aria-live="polite" aria-atomic="false">
-                        <p class="no-feedback-message">No feedback yet. Be the first to share your culinary experience!</p>
+                <!-- Two Column Layout: Form and Reviews -->
+                <div class="feedback-wrapper">
+                    <!-- Left Column: Feedback Form -->
+                    <div class="feedback-form-column">
+                        <div class="feedback-form-box">
+                            <h3 class="form-box-title">Submit Your Feedback</h3>
+                            
+                            <form id="feedbackForm" class="feedback-form" method="POST" action="#" novalidate>
+                                <!-- Name Input -->
+                                <div class="form-group">
+                                    <label for="visitorName">Your Name <span class="required">*</span></label>
+                                    <input 
+                                        type="text" 
+                                        id="visitorName" 
+                                        name="visitorName" 
+                                        class="form-input" 
+                                        placeholder="Enter your name"
+                                        required 
+                                        minlength="2"
+                                        maxlength="50"
+                                        aria-required="true"
+                                        aria-describedby="nameError">
+                                    <span class="error-message" id="nameError"></span>
+                                </div>
+
+                                <!-- Email Input -->
+                                <div class="form-group">
+                                    <label for="visitorEmail">Your Email <span class="required">*</span></label>
+                                    <input 
+                                        type="email" 
+                                        id="visitorEmail" 
+                                        name="visitorEmail" 
+                                        class="form-input" 
+                                        placeholder="Enter your email address"
+                                        required 
+                                        aria-required="true"
+                                        aria-describedby="emailError">
+                                    <span class="error-message" id="emailError"></span>
+                                </div>
+
+                                <!-- Dish Selection -->
+                                <div class="form-group">
+                                    <label for="dishName">Which Dish Did You Enjoy? <span class="required">*</span></label>
+                                    <select 
+                                        id="dishName" 
+                                        name="dishName" 
+                                        class="form-select" 
+                                        required 
+                                        aria-required="true"
+                                        aria-describedby="dishError">
+                                        <option value="">-- Select a dish --</option>
+                                        <option value="Nasi Lemak">Nasi Lemak</option>
+                                        <option value="Asam Laksa">Asam Laksa</option>
+                                        <option value="Roti Canai">Roti Canai</option>
+                                        <option value="Kuih Lapis">Kuih Lapis</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                    <span class="error-message" id="dishError"></span>
+                                </div>
+
+                                <!-- Star Rating -->
+                                <div class="form-group">
+                                    <label for="ratingContainer">Rate Your Experience <span class="required">*</span></label>
+                                    <div class="star-rating-wrapper">
+                                        <div class="star-rating" id="ratingContainer" role="group" aria-labelledby="ratingLabel" aria-required="true">
+                                            <span id="ratingLabel" class="sr-only">Rate your experience from 1 to 5 stars</span>
+                                            <input type="radio" id="star5" name="rating" value="5" aria-label="5 stars">
+                                            <label for="star5" class="star" data-value="5" title="5 stars - Excellent">★</label>
+                                            
+                                            <input type="radio" id="star4" name="rating" value="4" aria-label="4 stars">
+                                            <label for="star4" class="star" data-value="4" title="4 stars - Very Good">★</label>
+                                            
+                                            <input type="radio" id="star3" name="rating" value="3" aria-label="3 stars">
+                                            <label for="star3" class="star" data-value="3" title="3 stars - Good">★</label>
+                                            
+                                            <input type="radio" id="star2" name="rating" value="2" aria-label="2 stars">
+                                            <label for="star2" class="star" data-value="2" title="2 stars - Fair">★</label>
+                                            
+                                            <input type="radio" id="star1" name="rating" value="1" aria-label="1 star">
+                                            <label for="star1" class="star" data-value="1" title="1 star - Poor">★</label>
+                                        </div>
+                                        <span class="rating-display" id="ratingDisplay"></span>
+                                    </div>
+                                    <span class="error-message" id="ratingError"></span>
+                                </div>
+
+                                <!-- Feedback Message -->
+                                <div class="form-group">
+                                    <label for="feedbackMessage">Your Feedback <span class="required">*</span></label>
+                                    <textarea 
+                                        id="feedbackMessage" 
+                                        name="feedbackMessage" 
+                                        class="form-textarea" 
+                                        placeholder="Share your thoughts about the recipes, website, or your culinary experience..."
+                                        required 
+                                        minlength="10"
+                                        maxlength="500"
+                                        rows="5"
+                                        aria-required="true"
+                                        aria-describedby="feedbackError feedbackCount"></textarea>
+                                    <div class="textarea-info">
+                                        <span id="feedbackCount" class="char-count">0/500</span>
+                                        <span class="error-message" id="feedbackError"></span>
+                                    </div>
+                                </div>
+
+                                <!-- Submit Button -->
+                                <button type="submit" class="feedback-submit-btn" aria-label="Submit your feedback">Submit Feedback</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Feedback Reviews -->
+                    <div class="feedback-reviews-column">
+                        <div class="feedback-display-box">
+                            <h3 class="reviews-box-title">
+                                <span class="reviews-icon">💬</span>
+                                Visitor Reviews
+                            </h3>
+                            
+                            <div id="feedbackList" class="feedback-list" role="region" aria-labelledby="reviews-box-title" aria-live="polite" aria-atomic="false">
+                                <p class="no-feedback-message">No feedback yet. Be the first to share your culinary experience!</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -484,7 +502,7 @@
             displayAllFeedback();
             
             // Scroll to feedback section
-            document.querySelector('.feedback-display-section').scrollIntoView({ behavior: 'smooth' });
+            document.querySelector('.feedback-display-box').scrollIntoView({ behavior: 'smooth' });
             
             // Show success message (optional)
             showSuccessMessage();
