@@ -3,31 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Malaysian Taste Buds - A Journey Through Flavours and Stories. Explore authentic Malaysian dishes, recipes, and cultural heritage.">
-    <meta name="keywords" content="Malaysian Taste Buds, Malaysian cuisine, authentic recipes, Nasi Lemak, Asam Laksa, Roti Canai, Kuih Lapis, Malaysian culture, food stories, traditional Malaysian dishes, Malaysian heritage, culinary journey">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Malaysian Taste Buds - A Journey Through Flavours and Stories. Explore authentic Malaysian dishes, recipes, and cultural heritage with visitor feedback and reviews.">
+    <meta name="keywords" content="Malaysian Taste Buds, Malaysian cuisine, authentic recipes, Nasi Lemak, Asam Laksa, Roti Canai, Kuih Lapis, Malaysian culture, food stories, traditional Malaysian dishes, Malaysian heritage, culinary journey, food reviews, visitor feedback">
     <meta name="author" content="Malaysian Taste Buds">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Malaysian Taste Buds - A Journey Through Flavours and Stories">
-    <meta property="og:description" content="Step into a world where every bite tells a story and every dish invites you on a journey across Malaysia's rich culinary landscape.">
-    <title>Home - Malaysian Taste Buds</title>
+    <meta property="og:description" content="Step into a world where every bite tells a story. Explore authentic Malaysian recipes and share your culinary feedback.">
+    <meta property="og:type" content="website">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Malaysian Taste Buds - Home",
+        "description": "A journey through Malaysian culinary heritage with authentic recipes and visitor reviews",
+        "url": "https://yourdomain.com/home.html",
+        "author": {
+            "@type": "Organization",
+            "name": "Malaysian Taste Buds"
+        }
+    }
+    </script>
+    
+    <title>Home - Malaysian Taste Buds | Authentic Malaysian Recipes & Reviews</title>
     <link rel="stylesheet" href="styles.css">
+    
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX');
+        gtag('config', 'G-XXXXXXXXXX', {
+            'page_path': window.location.pathname,
+            'page_title': document.title
+        });
     </script>
 </head>
+
 <body>
-    <header class="header">
+    <!-- Header Navigation -->
+    <header class="header" role="banner">
         <div class="container">
             <div class="logo">
                 <h1>Malaysian Taste Buds</h1>
             </div>
-            <nav class="navbar">
+            <nav class="navbar" role="navigation" aria-label="Main Navigation">
                 <ul>
-                    <li><a href="home.html">Home</a></li>
+                    <li><a href="home.html" aria-current="page">Home</a></li>
                     <li><a href="food.html">Food</a></li>
                     <li><a href="about.html">About</a></li>
                 </ul>
@@ -35,10 +63,12 @@
         </div>
     </header>
 
-    <main class="home-section">
+    <!-- Main Content -->
+    <main class="home-section" role="main">
         <div class="container">
-            <section class="welcome-section">
-                <h2>Malaysian Taste Buds - A Journey Through Flavours and Stories</h2>
+            <!-- Welcome Section -->
+            <section class="welcome-section" aria-labelledby="welcome-heading">
+                <h2 id="welcome-heading">Malaysian Taste Buds - A Journey Through Flavours and Stories</h2>
                 <article class="intro-content">
                     <p>Step into <strong>Malaysian Taste Buds</strong>, where every bite tells a story, and every dish invites you on a journey across Malaysia's rich culinary landscape. Here, food is more than just sustenance, it's culture, tradition, and a celebration of heritage.</p>
 
@@ -52,8 +82,9 @@
                 </article>
             </section>
 
-            <section class="featured-dishes">
-                <h2>Our Featured Malaysian Dishes</h2>
+            <!-- Featured Dishes Section -->
+            <section class="featured-dishes" aria-labelledby="featured-heading">
+                <h2 id="featured-heading">Our Featured Malaysian Dishes</h2>
                 <div class="dish-cards">
                     <article class="dish-card">
                         <h3>Nasi Lemak</h3>
@@ -77,11 +108,413 @@
                     </article>
                 </div>
             </section>
+
+            <!-- Feedback Section -->
+            <section class="feedback-section" aria-labelledby="feedback-heading">
+                <h2 id="feedback-heading">Share Your Culinary Experience</h2>
+                <p class="feedback-intro">We'd love to hear about your experience with Malaysian Taste Buds. Share your feedback, rate your favourite dishes, and help us improve our culinary journey.</p>
+                
+                <!-- Feedback Form -->
+                <div class="feedback-container">
+                    <form id="feedbackForm" class="feedback-form" method="POST" action="#" novalidate>
+                        <!-- Name Input -->
+                        <div class="form-group">
+                            <label for="visitorName">Your Name <span class="required">*</span></label>
+                            <input 
+                                type="text" 
+                                id="visitorName" 
+                                name="visitorName" 
+                                class="form-input" 
+                                placeholder="Enter your name"
+                                required 
+                                minlength="2"
+                                maxlength="50"
+                                aria-required="true"
+                                aria-describedby="nameError">
+                            <span class="error-message" id="nameError"></span>
+                        </div>
+
+                        <!-- Email Input -->
+                        <div class="form-group">
+                            <label for="visitorEmail">Your Email <span class="required">*</span></label>
+                            <input 
+                                type="email" 
+                                id="visitorEmail" 
+                                name="visitorEmail" 
+                                class="form-input" 
+                                placeholder="Enter your email address"
+                                required 
+                                aria-required="true"
+                                aria-describedby="emailError">
+                            <span class="error-message" id="emailError"></span>
+                        </div>
+
+                        <!-- Dish Selection -->
+                        <div class="form-group">
+                            <label for="dishName">Which Dish Did You Enjoy? <span class="required">*</span></label>
+                            <select 
+                                id="dishName" 
+                                name="dishName" 
+                                class="form-select" 
+                                required 
+                                aria-required="true"
+                                aria-describedby="dishError">
+                                <option value="">-- Select a dish --</option>
+                                <option value="Nasi Lemak">Nasi Lemak</option>
+                                <option value="Asam Laksa">Asam Laksa</option>
+                                <option value="Roti Canai">Roti Canai</option>
+                                <option value="Kuih Lapis">Kuih Lapis</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <span class="error-message" id="dishError"></span>
+                        </div>
+
+                        <!-- Star Rating -->
+                        <div class="form-group">
+                            <label for="ratingContainer">Rate Your Experience <span class="required">*</span></label>
+                            <div class="star-rating" id="ratingContainer" role="group" aria-labelledby="ratingLabel" aria-required="true">
+                                <span id="ratingLabel" class="sr-only">Rate your experience from 1 to 5 stars</span>
+                                <input type="radio" id="star5" name="rating" value="5" aria-label="5 stars">
+                                <label for="star5" class="star" data-value="5" title="5 stars - Excellent">★</label>
+                                
+                                <input type="radio" id="star4" name="rating" value="4" aria-label="4 stars">
+                                <label for="star4" class="star" data-value="4" title="4 stars - Very Good">★</label>
+                                
+                                <input type="radio" id="star3" name="rating" value="3" aria-label="3 stars">
+                                <label for="star3" class="star" data-value="3" title="3 stars - Good">★</label>
+                                
+                                <input type="radio" id="star2" name="rating" value="2" aria-label="2 stars">
+                                <label for="star2" class="star" data-value="2" title="2 stars - Fair">★</label>
+                                
+                                <input type="radio" id="star1" name="rating" value="1" aria-label="1 star">
+                                <label for="star1" class="star" data-value="1" title="1 star - Poor">★</label>
+                            </div>
+                            <span class="rating-display" id="ratingDisplay"></span>
+                            <span class="error-message" id="ratingError"></span>
+                        </div>
+
+                        <!-- Feedback Message -->
+                        <div class="form-group">
+                            <label for="feedbackMessage">Your Feedback <span class="required">*</span></label>
+                            <textarea 
+                                id="feedbackMessage" 
+                                name="feedbackMessage" 
+                                class="form-textarea" 
+                                placeholder="Share your thoughts about the recipes, website, or your culinary experience..."
+                                required 
+                                minlength="10"
+                                maxlength="500"
+                                rows="5"
+                                aria-required="true"
+                                aria-describedby="feedbackError feedbackCount"></textarea>
+                            <div class="textarea-info">
+                                <span id="feedbackCount" class="char-count">0/500</span>
+                                <span class="error-message" id="feedbackError"></span>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="feedback-submit-btn" aria-label="Submit your feedback">Submit Feedback</button>
+                    </form>
+                </div>
+
+                <!-- Feedback Display Section -->
+                <div class="feedback-display-section">
+                    <h3 id="feedback-list-heading">Visitor Feedback & Reviews</h3>
+                    <div id="feedbackList" class="feedback-list" role="region" aria-labelledby="feedback-list-heading" aria-live="polite" aria-atomic="false">
+                        <p class="no-feedback-message">No feedback yet. Be the first to share your culinary experience!</p>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
 
-    <footer class="footer">
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
         <p>&copy; 2026 Malaysian Taste Buds. All rights reserved. | A Journey Through Malaysian Culinary Heritage</p>
+        <p><a href="sitemap.xml">Sitemap</a> | <a href="privacy.html">Privacy Policy</a></p>
     </footer>
+
+    <!-- Feedback Script -->
+    <script>
+        // SEO-Optimized Feedback System with Form Validation
+        
+        // Star Rating Interactive Functionality
+        const stars = document.querySelectorAll('.star-rating .star');
+        const starInputs = document.querySelectorAll('.star-rating input[type="radio"]');
+        const ratingDisplay = document.getElementById('ratingDisplay');
+        
+        // Interactive star selection
+        stars.forEach(star => {
+            star.addEventListener('click', function() {
+                const value = this.getAttribute('data-value');
+                document.getElementById(`star${value}`).checked = true;
+                updateStarDisplay(value);
+            });
+            
+            star.addEventListener('mouseover', function() {
+                const value = this.getAttribute('data-value');
+                highlightStars(value);
+            });
+        });
+        
+        document.getElementById('ratingContainer').addEventListener('mouseout', function() {
+            const checkedValue = document.querySelector('.star-rating input[type="radio"]:checked');
+            if (checkedValue) {
+                highlightStars(checkedValue.value);
+            } else {
+                clearHighlight();
+            }
+        });
+        
+        function highlightStars(value) {
+            stars.forEach(star => {
+                const starValue = star.getAttribute('data-value');
+                if (starValue <= value) {
+                    star.classList.add('hovered');
+                } else {
+                    star.classList.remove('hovered');
+                }
+            });
+        }
+        
+        function clearHighlight() {
+            stars.forEach(star => star.classList.remove('hovered'));
+        }
+        
+        function updateStarDisplay(value) {
+            const labels = ['Poor', 'Fair', 'Good', 'Very Good', 'Excellent'];
+            ratingDisplay.textContent = `${value} stars - ${labels[value - 1]}`;
+            ratingDisplay.style.color = getStarColor(value);
+        }
+        
+        function getStarColor(value) {
+            const colors = {
+                1: '#E74C3C',
+                2: '#F39C12',
+                3: '#F1C40F',
+                4: '#2ECC71',
+                5: '#27AE60'
+            };
+            return colors[value] || '#D4AF37';
+        }
+        
+        // Character Counter for Textarea
+        const feedbackMessage = document.getElementById('feedbackMessage');
+        const charCount = document.getElementById('feedbackCount');
+        
+        feedbackMessage.addEventListener('input', function() {
+            charCount.textContent = `${this.value.length}/500`;
+        });
+        
+        // Form Validation Function
+        function validateForm(formData) {
+            const errors = {};
+            
+            // Validate Name
+            if (!formData.visitorName || formData.visitorName.trim().length < 2) {
+                errors.visitorName = 'Please enter a name (minimum 2 characters)';
+            }
+            
+            // Validate Email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!formData.visitorEmail || !emailRegex.test(formData.visitorEmail)) {
+                errors.visitorEmail = 'Please enter a valid email address';
+            }
+            
+            // Validate Dish Selection
+            if (!formData.dishName) {
+                errors.dishName = 'Please select a dish';
+            }
+            
+            // Validate Rating
+            if (!formData.rating) {
+                errors.rating = 'Please select a rating';
+            }
+            
+            // Validate Feedback Message
+            if (!formData.feedbackMessage || formData.feedbackMessage.trim().length < 10) {
+                errors.feedbackMessage = 'Please enter feedback (minimum 10 characters)';
+            }
+            
+            return errors;
+        }
+        
+        // Display Validation Errors
+        function displayErrors(errors) {
+            // Clear all previous errors
+            document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+            
+            // Display new errors
+            for (const [field, message] of Object.entries(errors)) {
+                const errorElement = document.getElementById(`${field}Error`);
+                if (errorElement) {
+                    errorElement.textContent = message;
+                }
+            }
+        }
+        
+        // Format Timestamp
+        function getFormattedDate() {
+            const options = { 
+                year: 'numeric', 
+                month: 'short', 
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            };
+            return new Date().toLocaleDateString('en-MY', options);
+        }
+        
+        // Create Star Display HTML
+        function createStarDisplay(rating) {
+            return '★'.repeat(rating) + '☆'.repeat(5 - rating);
+        }
+        
+        // Create Feedback Card HTML
+        function createFeedbackCard(feedback, index) {
+            const ratingLabels = ['Poor', 'Fair', 'Good', 'Very Good', 'Excellent'];
+            const ratingColors = {
+                1: '#E74C3C',
+                2: '#F39C12',
+                3: '#F1C40F',
+                4: '#2ECC71',
+                5: '#27AE60'
+            };
+            
+            return `
+                <article class="feedback-card" data-index="${index}">
+                    <div class="feedback-header">
+                        <div class="feedback-user-info">
+                            <h4 class="feedback-name">${escapeHtml(feedback.visitorName)}</h4>
+                            <span class="feedback-dish">${escapeHtml(feedback.dishName)}</span>
+                        </div>
+                        <time class="feedback-date" datetime="${new Date().toISOString()}">${feedback.date}</time>
+                    </div>
+                    
+                    <div class="feedback-rating">
+                        <div class="stars-display" style="color: ${ratingColors[feedback.rating]};">
+                            ${createStarDisplay(feedback.rating)}
+                        </div>
+                        <span class="rating-label">${feedback.rating}/5 - ${ratingLabels[feedback.rating - 1]}</span>
+                    </div>
+                    
+                    <p class="feedback-message">${escapeHtml(feedback.feedbackMessage)}</p>
+                </article>
+            `;
+        }
+        
+        // Escape HTML for Security
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+        
+        // Load Feedback from LocalStorage
+        function loadFeedback() {
+            const savedFeedback = localStorage.getItem('malaysiaTasteBudsFeedback');
+            return savedFeedback ? JSON.parse(savedFeedback) : [];
+        }
+        
+        // Save Feedback to LocalStorage
+        function saveFeedback(feedbackArray) {
+            localStorage.setItem('malaysiaTasteBudsFeedback', JSON.stringify(feedbackArray));
+        }
+        
+        // Display All Feedback
+        function displayAllFeedback() {
+            const feedbackList = document.getElementById('feedbackList');
+            const allFeedback = loadFeedback();
+            
+            if (allFeedback.length === 0) {
+                feedbackList.innerHTML = '<p class="no-feedback-message">No feedback yet. Be the first to share your culinary experience!</p>';
+                return;
+            }
+            
+            feedbackList.innerHTML = allFeedback
+                .reverse()
+                .map((feedback, index) => createFeedbackCard(feedback, index))
+                .join('');
+        }
+        
+        // Form Submission Handler
+        document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect Form Data
+            const formData = {
+                visitorName: document.getElementById('visitorName').value.trim(),
+                visitorEmail: document.getElementById('visitorEmail').value.trim(),
+                dishName: document.getElementById('dishName').value,
+                rating: parseInt(document.querySelector('input[name="rating"]:checked')?.value || 0),
+                feedbackMessage: document.getElementById('feedbackMessage').value.trim(),
+                date: getFormattedDate()
+            };
+            
+            // Validate Form
+            const errors = validateForm(formData);
+            
+            if (Object.keys(errors).length > 0) {
+                displayErrors(errors);
+                // Scroll to first error
+                const firstErrorField = document.getElementById(Object.keys(errors)[0]);
+                if (firstErrorField) {
+                    firstErrorField.focus();
+                    firstErrorField.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+                return;
+            }
+            
+            // Clear errors if form is valid
+            displayErrors({});
+            
+            // Add feedback to storage
+            const allFeedback = loadFeedback();
+            allFeedback.push(formData);
+            saveFeedback(allFeedback);
+            
+            // Reset form
+            this.reset();
+            ratingDisplay.textContent = '';
+            clearHighlight();
+            charCount.textContent = '0/500';
+            
+            // Display updated feedback
+            displayAllFeedback();
+            
+            // Scroll to feedback section
+            document.querySelector('.feedback-display-section').scrollIntoView({ behavior: 'smooth' });
+            
+            // Show success message (optional)
+            showSuccessMessage();
+        });
+        
+        // Success Message
+        function showSuccessMessage() {
+            const form = document.getElementById('feedbackForm');
+            const successMsg = document.createElement('div');
+            successMsg.className = 'success-message';
+            successMsg.setAttribute('role', 'alert');
+            successMsg.textContent = '✓ Thank you for your feedback! Your review has been posted.';
+            form.parentElement.insertBefore(successMsg, form);
+            
+            setTimeout(() => successMsg.remove(), 4000);
+        }
+        
+        // Initialize - Display existing feedback on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            displayAllFeedback();
+            
+            // Track page view for Google Analytics
+            if (window.gtag) {
+                gtag('event', 'page_view', {
+                    'page_path': window.location.pathname,
+                    'page_title': document.title
+                });
+            }
+        });
+    </script>
 </body>
+
 </html>
