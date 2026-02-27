@@ -43,7 +43,7 @@
                 <!-- Nasi Lemak -->
                 <div class="food-item">
                     <div class="food-image-container">
-                        <img src="Images/Nasi lemak- Malaysian food.jpg" alt="Nasi Lemak - Malaysia's national dish with fragrant coconut rice, spicy sambal, crispy anchovies, roasted peanuts, boiled egg, and fresh cucumber" class="food-image" id="nasi-lemak-img" onclick="toggleRecipe(event, 'nasi-lemak')">
+                        <img src="Images/Nasi lemak- Malaysian food.jpg" alt="Nasi Lemak - Malaysia's national dish with fragrant coconut rice, spicy sambal, crispy anchovies, roasted peanuts, boiled egg, and fresh cucumber" class="food-image" data-recipe="nasi-lemak" id="nasi-lemak-img">
                         <p class="image-hint">Click to view recipe</p>
                     </div>
                     <div id="nasi-lemak" class="recipe-content" style="display: none;">
@@ -106,14 +106,14 @@
                                 </li>
                             </ol>
                         </section>
-                        <button class="close-btn" onclick="toggleRecipe(event, 'nasi-lemak')">Close Recipe</button>
+                        <button class="close-btn" type="button">Close Recipe</button>
                     </div>
                 </div>
 
                 <!-- Asam Laksa -->
                 <div class="food-item">
                     <div class="food-image-container">
-                        <img src="https://images.food52.com/AGZZn1yfHpNxzBvpJyZxt3a5zsw=/6092154f-b33f-4cf6-bb17-edb72ff52882--WoonHengXFood52_CollabPost2_online-.jpg" alt="Asam Laksa - Bold and tangy Malaysian noodle soup from Penang with tamarind-based fish broth, fresh herbs, and balanced flavors" class="food-image" id="asam-laksa-img" onclick="toggleRecipe(event, 'asam-laksa')">
+                        <img src="https://images.food52.com/AGZZn1yfHpNxzBvpJyZxt3a5zsw=/6092154f-b33f-4cf6-bb17-edb72ff52882--WoonHengXFood52_CollabPost2_online-.jpg" alt="Asam Laksa - Bold and tangy Malaysian noodle soup from Penang with tamarind-based fish broth, fresh herbs, and balanced flavors" class="food-image" data-recipe="asam-laksa" id="asam-laksa-img">
                         <p class="image-hint">Click to view recipe</p>
                     </div>
                     <div id="asam-laksa" class="recipe-content" style="display: none;">
@@ -181,14 +181,14 @@
                                 </li>
                             </ol>
                         </section>
-                        <button class="close-btn" onclick="toggleRecipe(event, 'asam-laksa')">Close Recipe</button>
+                        <button class="close-btn" type="button">Close Recipe</button>
                     </div>
                 </div>
 
                 <!-- Roti Canai -->
                 <div class="food-item">
                     <div class="food-image-container">
-                        <img src="Images/Roti canai-malaysian food.jpg" alt="Roti Canai - Flaky, golden Malaysian flatbread with crisp layers and soft, chewy interior, perfect with curry or dhal" class="food-image" id="roti-canai-img" onclick="toggleRecipe(event, 'roti-canai')">
+                        <img src="Images/Roti canai-malaysian food.jpg" alt="Roti Canai - Flaky, golden Malaysian flatbread with crisp layers and soft, chewy interior, perfect with curry or dhal" class="food-image" data-recipe="roti-canai" id="roti-canai-img">
                         <p class="image-hint">Click to view recipe</p>
                     </div>
                     <div id="roti-canai" class="recipe-content" style="display: none;">
@@ -255,14 +255,14 @@
                                 </li>
                             </ol>
                         </section>
-                        <button class="close-btn" onclick="toggleRecipe(event, 'roti-canai')">Close Recipe</button>
+                        <button class="close-btn" type="button">Close Recipe</button>
                     </div>
                 </div>
 
                 <!-- Kuih Lapis -->
                 <div class="food-item">
                     <div class="food-image-container">
-                        <img src="Images/Kuih Lapis - Malaysian food.jpg" alt="Kuih Lapis - Traditional layered Malaysian dessert with vibrant colors made with tapioca, rice flour, and coconut milk" class="food-image" id="kuih-lapis-img" onclick="toggleRecipe(event, 'kuih-lapis')">
+                        <img src="Images/Kuih Lapis - Malaysian food.jpg" alt="Kuih Lapis - Traditional layered Malaysian dessert with vibrant colors made with tapioca, rice flour, and coconut milk" class="food-image" data-recipe="kuih-lapis" id="kuih-lapis-img">
                         <p class="image-hint">Click to view recipe</p>
                     </div>
                     <div id="kuih-lapis" class="recipe-content" style="display: none;">
@@ -330,7 +330,7 @@
                                 </li>
                             </ol>
                         </section>
-                        <button class="close-btn" onclick="toggleRecipe(event, 'kuih-lapis')">Close Recipe</button>
+                        <button class="close-btn" type="button">Close Recipe</button>
                     </div>
                 </div>
             </div>
@@ -342,9 +342,28 @@
     </footer>
 
     <script>
-        // ===== IMPROVED RECIPE TOGGLE SYSTEM =====
+        // ===== SIMPLE & EFFECTIVE RECIPE TOGGLE SYSTEM =====
         
-        // Close all recipes first
+        // Get all food images and close buttons
+        const foodImages = document.querySelectorAll('.food-image');
+        const closeButtons = document.querySelectorAll('.close-btn');
+
+        // Add click event to all food images
+        foodImages.forEach(image => {
+            image.addEventListener('click', function() {
+                const recipeId = this.getAttribute('data-recipe');
+                openRecipe(recipeId);
+            });
+        });
+
+        // Add click event to all close buttons
+        closeButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                closeAllRecipes();
+            });
+        });
+
+        // Function to close ALL recipes
         function closeAllRecipes() {
             const allRecipes = document.querySelectorAll('.recipe-content');
             allRecipes.forEach(recipe => {
@@ -352,79 +371,70 @@
             });
         }
 
-        // Toggle specific recipe - only shows the clicked one
-        function toggleRecipe(event, recipeId) {
-            event.preventDefault();
-            event.stopPropagation();
-            
+        // Function to open specific recipe
+        function openRecipe(recipeId) {
             // Close all recipes first
             closeAllRecipes();
             
-            // Get the clicked recipe
+            // Open the specific recipe
             const recipe = document.getElementById(recipeId);
-            
             if (recipe) {
-                // Toggle display for the specific recipe
-                recipe.style.display = recipe.style.display === 'none' || recipe.style.display === '' ? 'block' : 'none';
+                recipe.style.display = 'block';
                 
-                // Scroll to the recipe smoothly
-                if (recipe.style.display === 'block') {
-                    setTimeout(() => {
-                        recipe.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }, 100);
-                }
+                // Smooth scroll to recipe
+                setTimeout(() => {
+                    recipe.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'start' 
+                    });
+                }, 100);
                 
-                // Track recipe view in Google Analytics
+                // Track in Google Analytics
                 gtag('event', 'recipe_view', {
                     'recipe_name': recipeId
                 });
             }
         }
 
-        // Click outside recipe to close it
+        // Close recipe when clicking outside of it
         document.addEventListener('click', function(event) {
-            // Check if click is outside recipe content
             const recipeContents = document.querySelectorAll('.recipe-content');
-            let clickedInsideRecipe = false;
+            const foodImages = document.querySelectorAll('.food-image');
             
+            let clickedOnRecipe = false;
+            let clickedOnImage = false;
+            let clickedButton = false;
+
+            // Check if clicked on recipe content
             recipeContents.forEach(recipe => {
                 if (recipe.contains(event.target)) {
-                    clickedInsideRecipe = true;
+                    clickedOnRecipe = true;
                 }
             });
-            
-            // Don't close if clicking close button (handled by onclick)
+
+            // Check if clicked on image
+            foodImages.forEach(img => {
+                if (img.contains(event.target)) {
+                    clickedOnImage = true;
+                }
+            });
+
+            // Check if clicked on button
             if (event.target.classList.contains('close-btn')) {
-                return;
+                clickedButton = true;
             }
-            
-            // Close all recipes when clicking outside
-            if (!clickedInsideRecipe && !event.target.classList.contains('food-image')) {
+
+            // Close recipe if clicked outside
+            if (!clickedOnRecipe && !clickedOnImage && !clickedButton) {
                 closeAllRecipes();
             }
         });
 
-        // Prevent event bubbling on recipe content
-        document.querySelectorAll('.recipe-content').forEach(recipe => {
-            recipe.addEventListener('click', function(event) {
-                event.stopPropagation();
-            });
-        });
-
-        // Track recipe views in Google Analytics
-        document.querySelectorAll('.food-image').forEach(img => {
-            img.addEventListener('click', function() {
-                gtag('event', 'food_image_click', {
-                    'image_id': this.id
-                });
-            });
-        });
-
-        // Log page view
+        // Log analytics
         window.addEventListener('load', function() {
             gtag('event', 'page_view', {
-                'page_title': document.title,
-                'page_path': window.location.pathname
+                'page_title': 'Food Recipes',
+                'page_path': '/food.html'
             });
         });
     </script>
