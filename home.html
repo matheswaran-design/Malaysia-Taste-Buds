@@ -142,21 +142,6 @@
                                     <span class="error-message" id="nameError"></span>
                                 </div>
 
-                                <!-- Email Input -->
-                                <div class="form-group">
-                                    <label for="visitorEmail">Your Email <span class="required">*</span></label>
-                                    <input 
-                                        type="email" 
-                                        id="visitorEmail" 
-                                        name="visitorEmail" 
-                                        class="form-input" 
-                                        placeholder="Enter your email address"
-                                        required 
-                                        aria-required="true"
-                                        aria-describedby="emailError">
-                                    <span class="error-message" id="emailError"></span>
-                                </div>
-
                                 <!-- Dish Selection -->
                                 <div class="form-group">
                                     <label for="dishName">Which Dish Did You Enjoy? <span class="required">*</span></label>
@@ -332,12 +317,6 @@
             // Validate Name
             if (!formData.visitorName || formData.visitorName.trim().length < 2) {
                 errors.visitorName = 'Please enter a name (minimum 2 characters)';
-            }
-            
-            // Validate Email
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!formData.visitorEmail || !emailRegex.test(formData.visitorEmail)) {
-                errors.visitorEmail = 'Please enter a valid email address';
             }
             
             // Validate Dish Selection
