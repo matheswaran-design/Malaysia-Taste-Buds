@@ -486,4 +486,55 @@
                     });
                 }, 100);
                 
-                // Track in
+                // Track in Google Analytics
+                gtag('event', 'recipe_view', {
+                    'recipe_name': recipeId
+                });
+            }
+        }
+
+        // Close recipe when clicking outside of it
+        document.addEventListener('click', function(event) {
+            const recipeContents = document.querySelectorAll('.recipe-content');
+            const foodImages = document.querySelectorAll('.food-image');
+            
+            let clickedOnRecipe = false;
+            let clickedOnImage = false;
+            let clickedButton = false;
+
+            // Check if clicked on recipe content
+            recipeContents.forEach(recipe => {
+                if (recipe.contains(event.target)) {
+                    clickedOnRecipe = true;
+                }
+            });
+
+            // Check if clicked on image
+            foodImages.forEach(img => {
+                if (img.contains(event.target)) {
+                    clickedOnImage = true;
+                }
+            });
+
+            // Check if clicked on button
+            if (event.target.classList.contains('close-btn')) {
+                clickedButton = true;
+            }
+
+            // Close recipe if clicked outside
+            if (!clickedOnRecipe && !clickedOnImage && !clickedButton) {
+                closeAllRecipes();
+            }
+        });
+
+        // Log analytics
+        window.addEventListener('load', function() {
+            gtag('event', 'page_view', {
+                'page_title': 'Food Recipes',
+                'page_path': '/food.html'
+            });
+        });
+    </script>
+</body>
+
+</html>
